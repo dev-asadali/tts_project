@@ -1,0 +1,8 @@
+Django>=4.0
+TTS>=0.12
+torch>=2.0.0+cu118; platform_system == "Linux" and "CUDA" in sys_platform
+torch>=2.0.0; platform_system != "Linux" or "CUDA" not in sys_platform
+djangorestframework>=3.14
+gunicorn>=20.1
+whitenoise>=6.0
+Pillow>=9.0
