@@ -18,7 +18,7 @@ os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 # Available TTS models and cache for loaded models
-available_models = TTS.list_models()
+available_models = TTS().list_models()
 loaded_models = {}
 
 # Generate a random filename
