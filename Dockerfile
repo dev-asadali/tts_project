@@ -18,7 +18,7 @@ RUN apt-get update && apt-get upgrade -y && \
     python3-wheel \
     espeak-ng \
     libsndfile1-dev && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies individually
 RUN pip3 install --no-cache-dir --default-timeout=2000 llvmlite --ignore-installed
