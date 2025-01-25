@@ -19,6 +19,7 @@ RUN apt-get update && apt-get upgrade -y && \
     espeak-ng \
     libsndfile1-dev && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y tzdata
 
 # Install Python dependencies individually
 RUN pip3 install --no-cache-dir --default-timeout=2000 llvmlite --ignore-installed
