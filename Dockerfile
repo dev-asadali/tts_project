@@ -19,7 +19,7 @@ RUN apt-get update && apt-get upgrade -y && \
     espeak-ng \
     libsndfile1-dev && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
-RUN apt-get update && apt-get install -y tzdata
+
 
 # Install Python dependencies individually
 RUN pip3 install --no-cache-dir --default-timeout=2000 llvmlite --ignore-installed
@@ -28,6 +28,8 @@ RUN pip3 install --no-cache-dir --default-timeout=2000 django
 RUN pip3 install --no-cache-dir --default-timeout=2000 TTS
 RUN pip3 install --no-cache-dir --default-timeout=2000 pillow
 RUN pip3 install --no-cache-dir --default-timeout=2000 numpy
+RUN pip3 install --no-cache-dir --default-timeout=2000 tzdata
+
 # Add other Python dependencies here (one per line)
 
 # Copy application code into the container
