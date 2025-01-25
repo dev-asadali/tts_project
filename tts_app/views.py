@@ -101,4 +101,4 @@ def voice_clone(request):
 
 # List available TTS models
 def list_models(request):
-    return available_models
+    return JsonResponse({"models": list(available_models)})
