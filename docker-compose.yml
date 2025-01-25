@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     container_name: coqui_tts_app
     ports:
-      - "8000:8000"
+      - "5000:5000"
     volumes:
       - ./media:/app/media
       - ./static:/app/static
