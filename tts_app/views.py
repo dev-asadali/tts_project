@@ -101,4 +101,12 @@ def voice_clone(request):
 
 # List available TTS models
 def list_models(request):
-    return JsonResponse({"models": list(available_models)})
+    print("Available models:", available_models)  # Debug output
+    print("Type of available_models:", type(available_models))
+    try:
+        models_list = list(available_models)  # Try converting to list
+        return JsonResponse({"models": models_list})
+    except TypeError as e:
+        print("Error:", str(e))  # Log the exact error message
+        return JsonResponse({"error": "available_models is not iterable"}, status=500)
+
